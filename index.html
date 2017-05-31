@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>yfcloud api documentation</title>
+	</head>
+<body>
+<h1>api documentation</h1>
+
+<h2>1. 概览</h2>
+
+<h3>1. 1. api地址</h3>
+
+<p>http://预留</p>
+
+<h3>1. 2. 调用方式</h3>
+
+<p>GET：提交参数用url?arg1=value1&amp;arg2=value2&amp;arg3=value3格式</p>
+
+<p>POST：提交的数据使用json格式</p>
+
+<p>PUT</p>
+
+<p>DELETE</p>
+
+<h3>1. 3. 鉴权相关</h3>
+
+<hr />
+
+<h2>2. 传统CDN和点播业务</h2>
+
+<h3>2. 1. 域名</h3>
+
+<h4>2. 1. 1. 查询域名信息</h4>
+
+<p><strong>GET /cdn/v1/domains </strong></p>
+
+<p>调用参数</p>
+
+<ul>
+	<li><strong>domain</strong>: 域名，可选，无默认值，多域用;分割</li>
+</ul>
+
+<ul>
+	<li><strong>is_hls</strong>: hls标识，可选，无默认值（0: 非hls；1:hls）</li>
+	<li><strong>ids</strong>: 域名id，可选，无默认值，多域用;分割</li>
+	<li> <strong>offset</strong>: 偏移（用于域名分页），可选，默认值0</li>
+	<li><strong>max_domains</strong>: 最大返回条目数，可选，默认值2000（0～2000）</li>
+</ul>
+
+<p><code>domain和ids都为空，返回当前用户所有域名，每次最多10000条
+</code></p>
+
+<h4>2. 1. 2. 查询域名配置</h4>
+
+<p><strong> GET /cdn/v1/domains/IDS</strong></p>
+
+<h4>2. 1. 3. 新增域名</h4>
+
+<p><strong>POST /cdn/v1/domains</strong></p>
+
+<p>json数据</p>
+
+<p><strong>domain</strong>: 域名，必选，支持通配符</p>
+
+<p><strong>type</strong>: 类型，必选，videocache、webcache、filecache、piccache</p>
+
+<p><strong>origin_type</strong></p>
+
+</body>
+</html>
